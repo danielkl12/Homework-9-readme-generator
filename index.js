@@ -1,15 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const util = require('util');
+const path = require('path');
+const readMeGen = require('./utils/readMeGen');
 
-
-const writeFileAsync = util.promisify(fs.writeFile);
-
-//const promptUser = () => {
-    //return inquirer.prompt([
-
-    inquirer
-        .prompt([
+const questions =[
+    
       {
         type: 'input',
         name: 'title',
@@ -49,21 +44,20 @@ const writeFileAsync = util.promisify(fs.writeFile);
         type: 'input',
         name: 'licenses',
         message: 'What licenses do you have for this repository?',
-        choices: "",
+        choices: ['MIT', 'APACHE 2.0', 'GPL 3.0', 'BSD 3', 'None'],
       },
-    ]);
-//};
+    ];
 
-const provideHTML = (answers) =>
-    'DOCTYPE html'
-'html lang="en">'
-'<head>'
-    '<meta charset="UTF-8">'
-    '<meta http-equiv="X-UA-Compatible" content="ie=edge">'
-    '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">'
-    '<title>Readme Generator</title>'
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(path.join(process.cwd(), fileName), data)
+};
 
+function init(){
+    inquirer.prompt(questions).then((inquirerResponse) => {
+        console.log("Complete!");
+        writeToFile("README.md", readMeGen({...inquirerResponse}));
+    });
+}
 
-'</head>'
-
-
+init();
+   
