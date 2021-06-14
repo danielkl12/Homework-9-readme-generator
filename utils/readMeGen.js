@@ -3,7 +3,7 @@
 
 function initLicense(license) {
     if (license !== "none") {
-        return none;
+        //return none;
     }
 };
 
