@@ -1,4 +1,4 @@
-# p
+# Readme Generator
     undefined
 
     ## Contents:
@@ -11,22 +11,22 @@
     7. [Licenses](#licenses)
 
     ## description
-    p
+    Project that generates a readme file
 
     ## installation
-    p
+    Node.js
 
     ## use
-    p
+    Enter prompts and open readme. 
 
     ## github
-    p
+    danielkl12
 
     ## email
-    p
+    danielkl12@icloud.com
 
     ## contribution
-    p
+    email me at danielkl12@icloud.com
 
     ## licenses
     undefined
