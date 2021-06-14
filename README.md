@@ -1,5 +1,7 @@
 # Readme Generator
     video: https://drive.google.com/file/d/1lJTeTjCwmixUMuXYWGr43g9uV-7ZSmZ6/view
+    
+    For this project we created a README.md file generator. Below, you will see the output of the README.md generator that was done in the video posted     in the link above. We used Node.js to get the prompts to function and create the readme file. 
 
     ## Contents:
     1. [Description](#description)
